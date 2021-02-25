@@ -12,19 +12,16 @@ def get_question_text(question_name):
     plain_question =  soup.get_text().replace('\n',' ')
     return [title, html_question, plain_question]
 
-problem_names = ["two-sum", "add-two-numbers", "longest-substring-without-repeating-characters", "median-of-two-sorted-arrays", "longest-palindromic-substring", "zigzag-conversion", "reverse-integer", "string-to-integer-atoi", "palindrome-number", "regular-expression-matching", "container-with-most-water", "integer-to-roman", "roman-to-integer", "longest-common-prefix", "3sum", "3sum-closest", "letter-combinations-of-a-phone-number", "4sum", "remove-nth-node-from-end-of-list", "merge-two-sorted-lists", "generate-parentheses", "merge-k-sorted-lists", "swap-nodes-in-pairs", "reverse-nodes-in-k-group", "remove-duplicates-from-sorted-array"]
+problem_names = ["two-sum", "add-two-numbers", "longest-substring-without-repeating-characters", "median-of-two-sorted-arrays", "longest-palindromic-substring", "zigzag-conversion", "reverse-integer", "string-to-integer-atoi", "palindrome-number", "regular-expression-matching", "container-with-most-water", "integer-to-roman", "roman-to-integer", "longest-common-prefix", "3sum", "3sum-closest", "letter-combinations-of-a-phone-number", "4sum", "remove-nth-node-from-end-of-list", "merge-two-sorted-lists", "generate-parentheses", "merge-k-sorted-lists", "swap-nodes-in-pairs", "reverse-nodes-in-k-group", "remove-duplicates-from-sorted-array" , "remove-element", "implement-strstr", "divide-two-integers","substring-with-concatenation-of-all-words", "next-permutation","longest-valid-parentheses", "search-in-rotated-sorted-array","find-first-and-last-position-of-element-in-sorted-array", "search-insert-position","valid-sudoku", "sudoku-solver","count-and-say", "combination-sum","combination-sum-ii", "first-missing-positive","trapping-rain-water", "multiply-strings","wildcard-matching", "jump-game-ii","permutations", "permutations-ii","rotate-image", "group-anagrams","powx-n", "n-queens"]
 all_problems = list(map(get_question_text, problem_names))
-print(all_problems)
 
 #Problem 0, all info
 print(len(all_problems))
-print(all_problems[0]) #[0] is title, [1] is html, [2] is plaintext
-
 for i in range(len(all_problems)):
     text_file = open(f"scrapedhtml/{all_problems[i][0]}.html", "x", encoding="utf-8")
     text_file.write(all_problems[i][1])
     text_file.close()
     
-    text_file = open(f"scrapedtxt/{all_problems[i][0]}.txt", "x", encoding="utf-8")
-    text_file.write(all_problems[i][2])
-    text_file.close()
+    #text_file = open(f"scrapedtxt/{all_problems[i][0]}.txt", "x", encoding="utf-8")
+    #text_file.write(all_problems[i][2])
+    #text_file.close()
